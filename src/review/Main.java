@@ -7,6 +7,20 @@ import java.util.List;
 
 public class Main {
 
+    public  int output(int value){
+        try{
+            value=value/0;
+           return value*value;
+        }
+        catch (Exception e){
+            return 1;
+        }
+
+        finally {
+            return 0;
+        }
+    }
+
     public  void ArraysTest(List<List<String>> string){
         for (List<String> list : string) {
             for (String s : list) {
@@ -35,5 +49,29 @@ public class Main {
         main.ArraysTest(listList);
 
 
+        System.out.println("--------------");
+        System.out.println(main.output(2));
+
+
     }
+}
+
+
+class Father {
+    private int id=100;
+    private String name;
+
+    public Father(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+class Child extends  Father{
+    public Child(int id, String name, int age) {
+        super(id, name);
+        this.age = age;
+    }
+
+    private int age;
+
 }
